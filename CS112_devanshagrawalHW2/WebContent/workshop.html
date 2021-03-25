@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+		<table>
+				<tr>
+					<td> First Number</td>
+					<td> <input type="text" id="firstNum"></td>
+				</tr>
+				<tr>
+					<td> Second Number</td>
+					<td> <input type="text" id="secondNum"></td>
+				</tr>
+		</table>
+		<table>
+			<tr>
+				<td>
+					<input type="button" value="+" 
+					onclick="firstNumber = parseFloat(document.getElementById('firstNum').value);secondNumber = parseFloat(document.getElementById('secondNum').value);sum=firstNumber+secondNumber;document.getElementById('message').innerHTML = 'The result is ' +sum;">
+				</td>	
+				<td>
+					<input type="button" value="-"
+					onclick="firstNumber = parseFloat(document.getElementById('firstNum').value);secondNumber = parseFloat(document.getElementById('secondNum').value);diff=firstNumber-secondNumber;document.getElementById('message').innerHTML = 'The result is ' +diff;">
+				</td>
+				<td>
+					<input type="button" value="*"
+					onclick="firstNumber = parseFloat(document.getElementById('firstNum').value);secondNumber = parseFloat(document.getElementById('secondNum').value);Mul=firstNumber*secondNumber;document.getElementById('message').innerHTML = 'The result is ' +Mul;">
+				</td>
+				<td>
+					<input type="button" value="/"
+					onclick="firstNumber = parseFloat(document.getElementById('firstNum').value);secondNuber = parseFloat(document.getElementById('secondNum').value);div=firstNumber/secondNumber;document.getElementById('message').innerHTML = 'The result is ' +div;">
+				</td>	
+				<td>
+				<input type = "button" value="CE" onclick="document.getElementById('message').innerHTML =''";>
+				</td>
+					
+			</tr>
+		</table>
+		<hr>
+		<div id="message">
+		
+		</div>
+</body>
+</html>

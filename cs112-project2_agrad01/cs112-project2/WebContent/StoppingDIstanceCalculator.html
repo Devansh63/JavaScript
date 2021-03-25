@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Stopping Distance Calculator</title>
+
+<script type="text/javascript">
+	function ShowBrakingImage() {
+		var n = Math.floor(3 * Math.random()) + 1;
+		var imgName = 'images/braking' + n + '.png';
+		document.getElementById("brakingImg").src = imgName;
+	}
+
+	function CalculateStoppingDistance() {
+		var s = parseFloat(document.getElementById('speed').value);
+		var rt = parseFloat(document.getElementById('rTime').value);
+		var cof = parseFloat(document.getElementById('cOfFric').value);
+
+		s = (1000 * s) / 3600;
+
+		var a = document.getElementById('rDist');
+		var b = document.getElementById('bDist');
+		var c = document.getElementById('sDist');
+
+		var bd = (Math.pow(s, 2)) / (2 * (cof * 9.8));
+		var rd = s * rt;
+		var sd = (bd + rd);
+
+		bd = Math.round(bd * 100) / 100;
+		rd = Math.round(rd * 100) / 100;
+		sd = Math.round(sd * 100) / 100;
+
+		a.value = rd;
+		b.value = bd;
+		c.value = sd;
+	}
+
+	function Reset() {
+		document.getElementById('speed').value = "";
+		document.getElementById('rTime').value = "";
+		document.getElementById('cOfFric').value = "";
+		document.getElementById('rDist').value = "";
+		document.getElementById('bDist').value = "";
+		document.getElementById('sDist').value = "";
+	}
+</script>
+</head>
+
+
+<body onload="ShowBrakingImage()">
+	<h1>Stopping Distance Calculator</h1>
+	<img id="brakingImg" alt="braking" src="images/braking2.png">
+
+	<table>
+		<tr>
+			<td><b>Speed:</b></td>
+			<td><input type="text" size="5" id="speed"> km/h</td>
+		</tr>
+		<tr>
+			<td><b>Reaction Time:</b></td>
+			<td><input type="text" size="5" id="rTime"> seconds</td>
+		</tr>
+		<tr>
+			<td><b>Coef of Friction:</b></td>
+			<td><input type="text" size="5" id="cOfFric"></td>
+		</tr>
+		<tr>
+			<td><b>Reaction Distance:</b></td>
+			<td><input type="text" size="5" id="rDist"> m</td>
+		</tr>
+		<tr>
+			<td><b>Braking Distance:</b></td>
+			<td><input type="text" size="5" id="bDist"> m</td>
+		</tr>
+		<tr>
+			<td style="color: red;"><b>Stopping Distance:</b></td>
+			<td style="color: red;"><font color="red"><input
+					type="text" size="5" style="color: red;" id="sDist"> m</font></td>
+		</tr>
+	</table>
+
+	<input type="button" value="Calculate Stopping Distance" id="calcSDist"
+		onclick="CalculateStoppingDistance()">
+	<input type="button" value="Reset" id="reset" onclick="Reset()">
+
+</body>
+</html>

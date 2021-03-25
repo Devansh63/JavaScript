@@ -1,0 +1,28 @@
+<!doctype html>
+<!-- bits.html                                        Dave Reed -->
+<!-- Web page that displays the number of values representable. -->
+<!-- by a specified number of bits.                             -->
+<!-- ========================================================== -->
+<html>
+<head>
+<title>Bit Values</title>
+<script type="text/javascript">
+function BitsCalc()
+{
+	var number = parseInt(document.getElementById('bitsBox').value);
+	var dVal=Math.pow(2,number);
+	document.getElementById('outputDiv').innerHTML='With&nbsp' + number + '&nbspbits, you can represent&nbsp' + dVal + '&nbspdifferent values';	
+	
+}
+</script>
+</head>
+<body>
+	<h2>Bit Values</h2>
+	<p>
+		Enter a number of bits: <input type="text" id="bitsBox" value=8>
+	</p>
+	<input type="button" value="How many values?" onclick="BitsCalc();">
+	<hr>
+	<div id="outputDiv"></div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Speed Calculator</title>
+    </head>
+
+    <body>
+	    <table>
+					<tr>
+						<td> Processing Speed(in GHz):</td>
+						<td> <input type="text" id="firstNum"></td>
+					</tr>
+					<tr>
+						<td> Instruction to process(in billions of instructions):</td>
+						<td> <input type="text" id="secondNum"></td>
+					</tr>	
+					<tr>
+					<td>
+						<input type = "button" value = "Calculate" onclick= "firstNumber = parseFloat(document.getElementById('firstNum').value); secondNumber = parseFloat(document.getElementById('secondNum').value); div=secondNumber/firstNumber;document.getElementById('message').innerHTML = 'The computer takes' + div + ' seconds to complete the task.';">
+					</td>
+					</tr>
+		</table>			
+			<div id= "message">
+			
+			</div>
+    </body>
+
+</html>

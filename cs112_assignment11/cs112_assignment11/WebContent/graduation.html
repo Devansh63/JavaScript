@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script>
+	function DetermineGraduation(){
+		var classStanding = document.getElementById("classTxt").value;
+		classStanding = classStanding.toLowerCase(); // toLowerCase() transforms the string given into all lower case
+		var gpa = parseFloat(document.getElementById("gpaTxt").value);
+		
+		if(classStanding == "senior"){
+			if(gpa >=70){
+				document.getElementById("displayDiv").innerHTML = "Congratulations! You will graduate high school this year!";
+			}
+			else{
+				document.getElementById("displayDiv").innerHTML = "Sorry to inform you that you will have to repeat senior year.";
+			}			
+		}
+		else if(classStanding == "junior"){
+			if(gpa >=70){
+				document.getElementById("displayDiv").innerHTML = "Congratulations! You passed junior year!";
+			}
+			else{
+				document.getElementById("displayDiv").innerHTML = "Sorry to inform you that you will have to repeat junior year.";
+			}	
+		}
+		else if(classStanding == "sophomore"){
+			if(gpa >=70){
+				document.getElementById("displayDiv").innerHTML = "Congratulations! You passed sophomore year!";
+			}
+			else{
+				document.getElementById("displayDiv").innerHTML = "Sorry to inform you that you will have to repeat sophomore year.";
+			}	
+		}
+		else{
+			if(gpa >=70){
+				document.getElementById("displayDiv").innerHTML = "Congratulations! You passed freshman year!";
+			}
+			else{
+				document.getElementById("displayDiv").innerHTML = "Sorry to inform you that you will have to repeat freshman year.";
+			}	
+		}
+	}
+</script>
+</head>
+<body>
+	<h1>Graduation</h1>
+	Class Standing: <input id="classTxt"><br>
+	GPA: <input id="gpaTxt"><br>
+	<input type="button" value="Determine Graduation" onclick="DetermineGraduation()">
+	<hr>
+	<div id="displayDiv"></div>
+</body>
+</html>

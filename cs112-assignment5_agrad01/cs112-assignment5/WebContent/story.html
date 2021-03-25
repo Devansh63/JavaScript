@@ -1,0 +1,45 @@
+<!doctype>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Story</title>
+    </head>
+
+    <body>
+    	<table>
+    		<tr>
+				<td>Enter a first name:	</td> 
+				<td><input type="text" id="firstName"></td> 		
+    		</tr>
+    		<tr>
+    			<td>Enter a last name:</td>
+    			<td><input type="text" id="lastName"></td>
+    		</tr>	
+    		<tr>
+    			<td>Enter a place:</td>
+    			<td><input type="text" id="placeName"></td>
+    		</tr>		
+    		<tr>
+    			<td> <input type="button" value="Fill In Story" onclick=" document.getElementById('div1').innerHTML = '<p>Towering over the market was an enormous,' +
+    			' shiny building that Klaus recognized as '+  document.getElementById('firstName').value +' , where the '+ document.getElementById('placeName').value +' had spent some time under the care of '+ document.getElementById('lastName').value + '  in an enormous' +
+    			' penthou se apartment. It seemed to the middle' + document.getElementById('placeName').value + ' that the building had not changed one bit since thesiblings had' +
+    			' first discovered Esmes treacherous and romantic attachment to Count Olaf. And Sunny '+ document.getElementById('placeName').value +' , who was still small enough' +
+    			' that he view out the window was somewhat restricted, heard the rattle of a manhole cover as the taxi drove over it, and remembered' +
+    			' the underground passageway she and her siblings had discovered, which led from the basement of '+  document.getElementById('firstName').value +' to the ashen remains' +
+    			' of their own home. </p>\n\n\nLike the market and the penthouse, the mystery of this passageway lead not changed, even though the '+ document.getElementById('placeName').value +' '+
+    			' had discovered a secret organization known as V.F.D. that the children believed had constructed many such passageways. Each mystery the ' + 
+    			' '+ document.getElementById('placeName').value +' s discovered onlyrevealed another mystery, and another, and another, and several more, and another, as if the three siblings were' +
+    			' diving deeper and deeper into a pond and all the while the city lay calm on the surface, unaware of all the unfortunate events in the' +
+    			' orphans lives. Even now, returning to the city that was once their home, the '+ document.getElementById('placeName').value +' orphans had solved few of the mysteries' +
+    			' overshadowing them. They didnt know where they were headed for instance, and they scarcely knew anything about the woman driving the ' +
+    			' automobile except her name';"  > </td>
+    		</tr>
+    	</table>
+		<div id= "div1">
+	
+		</div>
+
+    </body>
+
+</html>

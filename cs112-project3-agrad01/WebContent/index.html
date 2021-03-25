@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Bear, Hunter, Princess</title>
+
+		<script type="text/javascript" src="js/random.js"></script>
+        <script type="text/javascript">
+        var pWins=0;
+        var cWins=0;
+        var ties=0;
+        
+        function MakeChoice()
+        {
+        	return Math.floor(Math.random()*(3)) + 1;
+        }
+        </script>
+        
+        <script type="text/javascript" src="js/myscripts.js"></script>
+        <script type="text/javascript">
+        function UpdateCount(result)
+        {
+        	if(result=="tie")
+        		ties++;
+        	else if(result=="computerWins")
+        		cWins++;
+        	else
+        		pWins++;
+        	
+        	DisplayCounts();
+        	
+        }
+        
+        function DisplayCounts()
+        {
+        	document.getElementById('tallyDiv').innerHTML="<h3>Player wins: " + pWins + " -- Computer wins: " + cWins + " -- Ties: " + ties + "</h3>"; 
+        }
+        
+        function DisplayResult(pDisplay,cDisplay,result)
+        {
+        	if(result=="tie")
+        	document.getElementById('resultDiv').innerHTML="<h3>Player chose: " + pDisplay + "<br> Computer chose: " + cDisplay + "<br><font color=red> It's a tie!</font></h3>";
+        	else if(result=="computerWins")
+        		document.getElementById('resultDiv').innerHTML="<h3>Player chose: " + pDisplay + "<br> Computer chose: " + cDisplay + "<br><font color=red>" + cDisplay + " beats " + pDisplay + ". Computer Wins!</font></h3>";
+        		else
+        			document.getElementById('resultDiv').innerHTML="<h3>Player chose: " + pDisplay + "<br> Computer chose: " + cDisplay + "<br><font color=red>" + pDisplay + " beats " + cDisplay + ". Player Wins!</font></h3>";
+        }
+        
+        function PlayBear()
+        {
+        	var pDisplay="BEAR";
+        	var cChoice, result,cDisplay;
+        	
+        	cChoice= MakeChoice();
+        	
+        	if(cChoice==1)
+        		cDisplay="BEAR";
+        		else if(cChoice==2)
+        			cDisplay="HUNTER";
+        			else
+        				cDisplay="PRINCESS";
+        	
+        	if(cChoice==1)
+        		result="tie";
+        		else if(cChoice==2)
+        			result="computerWins";
+        			else
+        				result="playerWins";
+        	
+        	UpdateCount(result);
+        	DisplayResult(pDisplay,cDisplay,result);
+        	
+        	
+        }
+        
+        function PlayHunter()
+        {
+        	var pDisplay="HUNTER";
+        	var cChoice, result,cDisplay;
+        	
+        	cChoice= MakeChoice();
+        	
+        	if(cChoice==1)
+        		cDisplay="BEAR";
+        		else if(cChoice==2)
+        			cDisplay="HUNTER";
+        			else
+        				cDisplay="PRINCESS";
+        	
+        	if(cChoice==1)
+        		result="playerWins";
+        		else if(cChoice==2)
+        			result="tie";
+        			else
+        				result="computerWins";
+        	
+        	UpdateCount(result);
+        	DisplayResult(pDisplay,cDisplay,result);
+        	
+        	
+        }
+        
+        function PlayPrincess()
+        {
+        	var pDisplay="PRINCESS";
+        	var cChoice, result,cDisplay;
+        	
+        	cChoice= MakeChoice();
+        	
+        	if(cChoice==1)
+        		cDisplay="BEAR";
+        		else if(cChoice==2)
+        			cDisplay="HUNTER";
+        			else
+        				cDisplay="PRINCESS";
+        	
+        	if(cChoice==1)
+        		result="computerWins";
+        		else if(cChoice==2)
+        			result="playerWins";
+        			else
+        				result="tie";
+        	
+        	UpdateCount(result);
+        	DisplayResult(pDisplay,cDisplay,result);
+        	
+        	
+        }
+        
+        </script>
+        
+    </head>
+
+    <body>
+    
+    <div align="center">
+    <h2>Let's Play Bear, Hunter, Princess!</h2>
+    
+    <img src="images/bear.jpeg" onclick="PlayBear();">
+    <img src="images/hunter.jpeg" onclick="PlayHunter();">
+    <img src="images/princess.jpeg" onclick="PlayPrincess();">
+    
+    </div>
+    
+    <div id="tallyDiv" align="center">
+    <h3>Player wins: 0 – Computer wins: 0 – Ties: 0</h3>
+    </div>
+ 
+    <div id="resultDiv" align="center"></div>
+    
+    </body>
+</html>
